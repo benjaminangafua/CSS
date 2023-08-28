@@ -1,0 +1,128 @@
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Pseudo Class */
+
+.pseudo-selector {
+    width: max-content;
+    margin: 5rem auto;
+}
+
+.pseudo-selector>* {
+    margin-bottom: 1rem;
+}
+
+a:link {
+    background-color: rgb(10, 10, 10);
+    color: orange;
+}
+
+a:visited {
+    color: rgb(255, 192, 218)
+}
+
+a:hover {
+    background-color: rgb(3, 34, 3);
+    color: rgb(228, 228, 238);
+}
+
+a:active {
+    color: rgb(243, 234, 234);
+    padding: 1rem;
+}
+
+
+/* Pseudo Elements */
+
+.before::before {
+    content: " Before < -";
+    color: green;
+}
+
+.after::after {
+    content: " After -> ";
+    color: red;
+}
+
+.pseudo-typograph::first-letter {
+    text-decoration: overline;
+    font-size: 50px;
+    color: purple;
+}
+
+.pseudo-typograph::first-line {
+    color: #f8f9f9;
+    background-color: #173459;
+}
+
+.hlght-p::selection {
+    background-color: #173459;
+    color: #f8f9f9;
+}
+
+input::selection,
+textarea::selection {
+    background-color: blue;
+    border: black;
+}
+
+
+/* Translate */
+
+.translate>* {
+    height: 300px;
+    width: 300px;
+    background-color: lightgray;
+    margin-bottom: 1rem;
+    margin: 0 auto;
+}
+
+div[class="Move" i]:hover {
+    /* transform: translate(100px, 200px); */
+    transform: translateX(100px);
+    background-color: #173459;
+}
+
+
+/* Rotate */
+
+div[class|="rotate"i] {
+    background: black;
+    color: #f8f9f9;
+    text-align: center;
+}
+
+div[class="RotatE-antiClockwise" i] {
+    transform: rotate(-90deg);
+    background-color: navy;
+}
+
+div[class="RotatE-clockwise" i] {
+    transform: rotate(45deg);
+}
+
+
+/* Scale resizes */
+
+.scale {
+    transform: scale(3);
+    background-color: yellow;
+}
+
+.skew-t {
+    background-color: #173459;
+    transform: skew(45deg);
+    color: #f8f9f9;
+    /* margin-bottom: 0; */
+}
+
+.skew-b {
+    transform: skew(-45deg);
+    color: #f8f9f9;
+}
