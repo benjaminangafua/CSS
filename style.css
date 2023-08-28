@@ -75,12 +75,17 @@ textarea::selection {
 
 /* Translate */
 
+.transitions>*,
+.transform>*,
 .translate>* {
     height: 300px;
     width: 300px;
     background-color: lightgray;
     margin-bottom: 1rem;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div[class="Move" i]:hover {
@@ -119,10 +124,69 @@ div[class="RotatE-clockwise" i] {
     background-color: #173459;
     transform: skew(45deg);
     color: #f8f9f9;
-    /* margin-bottom: 0; */
 }
 
 .skew-b {
     transform: skew(-45deg);
     color: #f8f9f9;
+}
+
+.transform>* {
+    margin: 2rem auto;
+    transition-duration: 2s;
+}
+
+
+/* Any class with the letter z case-insensitive */
+
+div[class*="z"i]:hover {
+    background-color: teal;
+    color: orange;
+    transform: rotateZ(270deg);
+    /* 
+    270-90
+    180-360    
+    */
+}
+
+div[class^="__"i]:hover {
+    background-color: darkred;
+    color: rgb(241, 240, 236);
+    transform: rotateX(180deg);
+    /* 
+    180-360    
+    */
+}
+
+div[class$="?"i]:hover {
+    background-color: rgb(139, 0, 120);
+    color: #fff;
+    transform: rotateY(180deg);
+    /* 
+    90-270   At this it gets small until it exists no more  
+    */
+}
+
+
+/* Transitions */
+
+.transitions>* {
+    margin: 3rem auto;
+    background-color: aqua;
+}
+
+div[class="with-transition"i] {
+    /* transition-timing-function: ease-in; */
+    /* The name matters in taking effect. You can have many properties*/
+    /* transition-property: width, background-color, height; */
+    /* Take how much time a transition should take to complete  */
+    /* transition-duration: 2s; */
+    /* Wait before the transition effect starts  */
+    /* transition-delay: .9s; */
+    transition: ease-in-out width 1s .5s;
+}
+
+.transitions>*:hover {
+    width: 600px;
+    background-color: chartreuse;
 }
