@@ -75,6 +75,7 @@ textarea::selection {
 
 /* Translate */
 
+.animations>*,
 .transitions>*,
 .transform>*,
 .translate>* {
@@ -116,7 +117,7 @@ div[class="RotatE-clockwise" i] {
 /* Scale resizes */
 
 .scale {
-    transform: scale(3);
+    transform: scale(1.5);
     background-color: yellow;
 }
 
@@ -189,4 +190,55 @@ div[class="with-transition"i] {
 .transitions>*:hover {
     width: 600px;
     background-color: chartreuse;
+}
+
+
+/* Animation */
+
+.animations>* {
+    margin: 3rem auto;
+    background-color: rgb(2, 15, 15);
+    color: #fff;
+}
+
+.animated {
+    animation-name: animation;
+    animation-duration: .1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-duration: 5s;
+    position: relative;
+}
+
+@keyframes animation {
+    from {
+        background-color: burlywood;
+        left: 0;
+    }
+    to {
+        background-color: cornflowerblue;
+        left: 200px;
+    }
+    /* 0% {
+        background-color: burlywood;
+        top: 0px;
+        left: 0px;
+    }
+    25% {
+        color: rgb(30, 31, 28);
+        background-color: darksalmon;
+        top: 200px;
+        left: 200px;
+    }
+    75% {
+        background-color: coral;
+        top: 0px;
+        left: 200px;
+    }
+    100% {
+        background-color: chocolate;
+        top: 0px;
+        left: 0px;
+    } */
 }
