@@ -201,14 +201,30 @@ div[class="with-transition"i] {
     color: #fff;
 }
 
-.animated {
+.animated,
+.animated-right {
     animation-name: animation;
     animation-duration: .1s;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease;
     animation-iteration-count: infinite;
-    animation-direction: reverse;
+    /* animation-direction: reverse; */
     animation-duration: 5s;
     position: relative;
+}
+
+.animated-right {
+    animation-name: animated-right;
+}
+
+@keyframes animated-right {
+    from {
+        background-color: burlywood;
+        right: 0;
+    }
+    to {
+        background-color: cornflowerblue;
+        right: 200px;
+    }
 }
 
 @keyframes animation {
